@@ -1,0 +1,42 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block blogs%}
+
+<body>
+    <h2> Blog Informationn </h2>
+    <p>
+        
+    </p>
+    <a href="../create" type="button" class="btn btn-primary">Create Blog Entry</a>
+    <table  class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Blog ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Edit Blog</th>
+                <th scope="col">Remove Blog</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for blog in blogs %}
+            <tr>
+                <td>{{blog.BlogId}}</td>
+                <td>{{blog.Title}}</td>
+                <td>{{blog.Author_Name}}</td>
+                <td>{{blog.Start_Date}}</td>
+                <td>{{blog.End_Date}}</td>
+                <td>
+                    <a href="/update/{{blog.pk}}">Update</a>    
+                </td>
+                <td>
+                    <a href="/delete/{{blog.pk}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block blogs%}
+<script>
+$('.datepicker').datepicker({
+    inline: true
+  });
+</script>
+
+<h2 style="text-align:center"> Create New Blog </h2>
+    <form method="POST" >
+        {% csrf_token %}
+        <!-- {{ form.as_p }} -->
+        <div class="form-group">
+            <label>Blog ID</label>
+            <input type="text" name="BlogId" id="BlogId" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="Title" id="Title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Author Name</label>
+            <input type="text" name="Author_Name" id="Author_Name" class="form-control">
+        </div>
+        <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+            <label for="example">Start Date</label>
+            <input placeholder="Select date" type="text" id="Start_Date" class="form-control">
+            <i class="fas fa-calendar input-prefix"></i>
+          </div>
+          <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+            <label for="example">End Date</label>
+            <input placeholder="Select date" type="text" id="End_Date" class="form-control">
+            <i class="fas fa-calendar input-prefix"></i>
+          </div>
+        <input type="submit" class="btn btn-success">
+    </form>
+{% endblock %}
+
+https://pythonguides.com/python-django-mysql-crud/

@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block blogs%}
+<h1>Take your vote</h1>
+<div class="d-flex justify-content-center" style="background-color: #eee;">
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                ID
+            </td>
+            <td>
+                Poll question
+            </td>
+            <td>Action</td>
+        </tr>
+    </thead>
+
+    <!-- {% if latest_question_list %} -->
+    {% for question in latest_question_list %}
+    <tr>
+        <td>{{question.id}}</td>
+        <td>{{ question.question_text }}</td>
+        <td><a href="/polls/{{ question.id }}/" class="btn btn-primary">Vote</a></td>
+    </tr>
+    {% endfor %}
+    <!-- {% else %}
+    <p>No polls are available.</p>
+{% endif %} -->
+</table>
+</div>
+{% endblock %}

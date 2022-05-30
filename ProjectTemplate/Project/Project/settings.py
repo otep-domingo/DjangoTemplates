@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'members.apps.MembersConfig',
     'crud.apps.CrudConfig',
+    'polls.apps.PollsConfig',
 ]
 
 MIDDLEWARE = [
